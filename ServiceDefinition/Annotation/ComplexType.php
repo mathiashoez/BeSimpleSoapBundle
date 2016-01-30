@@ -18,6 +18,8 @@ class ComplexType extends Configuration
     private $name;
     private $value;
     private $isNillable = false;
+    private $minOccurs = 1;
+    private $maxOccurs = 1;    
 
     public function getName()
     {
@@ -47,6 +49,26 @@ class ComplexType extends Configuration
     public function setNillable($isNillable)
     {
         $this->isNillable = (bool) $isNillable;
+    }
+
+    public function getMinOccurs()
+    {
+        return $this->minOccurs;
+    }
+    
+    public function setMinOccurs($minOccurs)
+    {
+            $this->minOccurs = (int) $minOccurs;
+    }
+    
+    public function getMaxOccurs()
+    {
+        return $this->maxOccurs;
+    }
+    
+    public function setMaxOccurs($maxOccurs)
+    {
+            $this->maxOccurs = (int) $maxOccurs;
     }
 
     public function getAliasName()
